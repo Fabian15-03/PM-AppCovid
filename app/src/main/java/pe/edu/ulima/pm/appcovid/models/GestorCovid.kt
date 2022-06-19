@@ -10,7 +10,7 @@ import android.util.Log
 
 
 
-class GestorCovid {
+/*class GestorCovid {
     fun obtenerListaCovidRoom(context : Context) : List<CovidRoom> {
         val daoCovid : CovidRoomDao = AppDatabase.getInstance(
             context).getCovidRoomDao()
@@ -23,4 +23,4 @@ class GestorCovid {
         return listaCovid
     }
 
-}
+}*/
