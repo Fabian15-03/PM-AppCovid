@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCovid">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".verData"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
