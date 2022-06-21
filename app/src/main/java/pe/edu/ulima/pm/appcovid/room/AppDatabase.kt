@@ -4,13 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import pe.edu.ulima.pm.appcovid19.room.dao.CovidRoomDao
+import pe.edu.ulima.pm.appcovid19.room.dao.CovidRoomDAO
+
 import pe.edu.ulima.pm.appcovid19.room.modules.CovidRoom
 
 
 @Database(entities = arrayOf(CovidRoom :: class),version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun getCovidRoomDao() : CovidRoomDao
+    abstract fun getCovidRoomDao() : CovidRoomDAO
 
     companion object {
         private var mInstance : AppDatabase ? = null

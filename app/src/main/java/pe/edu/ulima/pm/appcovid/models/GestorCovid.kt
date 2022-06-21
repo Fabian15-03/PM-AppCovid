@@ -1,4 +1,4 @@
-package pe.edu.ulima.pm.appcovid19.models
+/*package pe.edu.ulima.pm.appcovid19.models
 
 import android.content.Context
 import pe.edu.ulima.pm.appcovid19.room.AppDatabase
@@ -10,7 +10,7 @@ import android.util.Log
 
 
 
-/*class GestorCovid {
+class GestorCovid {
     fun obtenerListaCovidRoom(context : Context) : List<CovidRoom> {
         val daoCovid : CovidRoomDao = AppDatabase.getInstance(
             context).getCovidRoomDao()
