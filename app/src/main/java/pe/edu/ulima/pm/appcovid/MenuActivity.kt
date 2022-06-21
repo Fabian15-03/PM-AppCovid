@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentActivity
 import pe.edu.ulima.pm.appcovid.fragments.FragmentData
 
 class MenuActivity : FragmentActivity()  {
-    private val fragmentData = FragmentData()
     private var mbtData: Button?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
