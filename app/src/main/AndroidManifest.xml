@@ -11,10 +11,10 @@
         android:theme="@style/Theme.AppCovid">
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".verData"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MenuActivity"
             android:exported="true">
