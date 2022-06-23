@@ -10,6 +10,7 @@ import android.util.Log
 
 
 class GestorCovid {
+    /*
     fun obtenerListaCovidRoom(context : Context) : List<CovidRoom> {
         val daoCovid : CovidRoomDao = AppDatabase.getInstance(
             context).getCovidRoomDao()
@@ -20,6 +21,6 @@ class GestorCovid {
             Covid(it.nombre, it.terreno, it.poblacion)
         }
         return listaCovid
-    }
+    }*/
 
 }
