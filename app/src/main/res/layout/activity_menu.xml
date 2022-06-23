@@ -42,8 +42,9 @@
         android:layout_height="34dp"
         android:layout_marginTop="56dp"
         android:text="Elaborado por :"
-        app:layout_constraintTop_toBottomOf="@+id/btnData"
-        tools:layout_editor_absoluteX="116dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnData" />
 
     <TextView
         android:id="@+id/textView7"
