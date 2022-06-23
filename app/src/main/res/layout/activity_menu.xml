@@ -10,7 +10,7 @@
         android:id="@+id/button3"
         android:layout_width="179dp"
         android:layout_height="61dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="200dp"
         android:text="Sincronizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,39 +30,44 @@
         android:id="@+id/btnData"
         android:layout_width="179dp"
         android:layout_height="61dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="40dp"
         android:text="VER DATA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="158dp"
         android:layout_height="34dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginBottom="16dp"
         android:text="Elaborado por :"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnData"
-        tools:layout_editor_absoluteX="116dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="32dp"
         android:text="Fabian Gonzales"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Alvaro Laupa"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

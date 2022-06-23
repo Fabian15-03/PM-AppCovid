@@ -23,6 +23,9 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
+id textView7
+id textView8
 id titulo
 layout activity_main
 layout activity_menu
