@@ -6,13 +6,13 @@ import androidx.room.PrimaryKey
 
 
 @Entity
-data class CovidRoom (
-    @PrimaryKey(autoGenerate = true)
-    val id : Int,
+data class CovidRoom(
+    @PrimaryKey
+    val id: Int,
     @ColumnInfo(name = "nombre")
-    val nombre : String,
+    val nombre: String,
     @ColumnInfo(name = "terreno")
-    val terreno : String,
+    val terreno: String,
     @ColumnInfo(name = "poblacion")
-    val poblacion : String
+    val poblacion: String,
 )

@@ -12,7 +12,7 @@ class NetworkingManager(val service : CovidService) {
             if (instance == null) {
 
                 val url: URL
-                url= URL("http:.com")
+                url= URL("https://files.minsa.gob.pe/s/eRqxR35ZCxrzNgr/download")
                 val urlconnection: HttpURLConnection
                 urlconnection= url.openConnection() as HttpURLConnection
                 try {

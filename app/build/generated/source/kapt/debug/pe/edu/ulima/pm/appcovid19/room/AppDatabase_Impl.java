@@ -39,9 +39,9 @@ public final class AppDatabase_Impl extends AppDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `CovidRoom` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombre` TEXT NOT NULL, `terreno` TEXT NOT NULL, `poblacion` TEXT NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `CovidRoom` (`id` TEXT NOT NULL, `nombre` TEXT NOT NULL, `terreno` TEXT NOT NULL, `poblacion` TEXT NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ec0c421ee005e67789f27152a6dcf81f')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '85552144c784f63906ea8c3ad802b872')");
       }
 
       @Override
@@ -86,7 +86,7 @@ public final class AppDatabase_Impl extends AppDatabase {
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
         final HashMap<String, TableInfo.Column> _columnsCovidRoom = new HashMap<String, TableInfo.Column>(4);
-        _columnsCovidRoom.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCovidRoom.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCovidRoom.put("nombre", new TableInfo.Column("nombre", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCovidRoom.put("terreno", new TableInfo.Column("terreno", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsCovidRoom.put("poblacion", new TableInfo.Column("poblacion", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -101,7 +101,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "ec0c421ee005e67789f27152a6dcf81f", "2ef691512fd1a35aa9c6eb1acf414b94");
+    }, "85552144c784f63906ea8c3ad802b872", "953a6877b99703a008f5630a1120f7b6");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

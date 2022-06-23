@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\AndroidStudio\\PM-AppCovid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+            "outputFile": "/Users/fabian/Desktop/PM-AppCovid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\7f093f47826ade38411925ce6cb176ab\\transformed\\material-1.6.1\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "/Users/fabian/.gradle/caches/transforms-3/7f093f47826ade38411925ce6cb176ab/transformed/material-1.6.1/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

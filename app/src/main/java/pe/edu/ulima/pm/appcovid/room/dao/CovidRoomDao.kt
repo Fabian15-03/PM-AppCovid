@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import pe.edu.ulima.pm.appcovid19.models.GestorCovid
 import pe.edu.ulima.pm.appcovid19.room.modules.CovidRoom
 
 
@@ -15,9 +16,4 @@ interface CovidRoomDAO {
     @Query("SELECT * FROM Covidroom WHERE id=:id")
     fun findById(id : Int) : CovidRoom
 
-    @Insert
-    fun insert(planeta : CovidRoom)
-
-    @Delete
-    fun delete(planeta: CovidRoom)
 }
