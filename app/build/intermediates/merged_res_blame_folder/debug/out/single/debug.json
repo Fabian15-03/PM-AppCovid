@@ -24,6 +24,10 @@
         "source": "E:\\AndroidStudio\\PM-AppCovid\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "E:\\AndroidStudio\\PM-AppCovid\\app\\build\\intermediates\\merged_res\\debug\\layout-land_activity_menu.xml.flat",
+        "source": "E:\\AndroidStudio\\PM-AppCovid\\app\\src\\main\\res\\layout-land\\activity_menu.xml"
+    },
+    {
         "merged": "E:\\AndroidStudio\\PM-AppCovid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_menu.xml.flat",
         "source": "E:\\AndroidStudio\\PM-AppCovid\\app\\src\\main\\res\\layout\\activity_menu.xml"
     },

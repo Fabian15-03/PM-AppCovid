@@ -2764,6 +2764,7 @@ int id legacy 0x7f0800f8
 int id line1 0x7f0800f9
 int id line3 0x7f0800fa
 int id linear 0x7f0800fb
+int id linearLayout2 0x7f0801fb
 int id listMode 0x7f0800fc
 int id list_item 0x7f0800fd
 int id masked 0x7f0800fe
@@ -2963,6 +2964,8 @@ int id textSpacerNoTitle 0x7f0801bf
 int id textStart 0x7f0801c0
 int id textTop 0x7f0801c1
 int id textView 0x7f0801c2
+int id textView10 0x7f0801fc
+int id textView11 0x7f0801fd
 int id textView2 0x7f0801c3
 int id textView3 0x7f0801c4
 int id textView4 0x7f0801c5
@@ -2970,6 +2973,7 @@ int id textView5 0x7f0801c6
 int id textView6 0x7f0801c7
 int id textView7 0x7f0801c8
 int id textView8 0x7f0801c9
+int id textView9 0x7f0801fe
 int id text_input_end_icon 0x7f0801ca
 int id text_input_error_icon 0x7f0801cb
 int id text_input_start_icon 0x7f0801cc

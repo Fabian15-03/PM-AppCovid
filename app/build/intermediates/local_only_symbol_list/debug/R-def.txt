@@ -15,10 +15,13 @@ id button4
 id itCantidadXDepartamento
 id itDataDepartamento
 id itemData
+id linearLayout2
 id rcyData
 id secciones
 id textInputEditText
 id textView
+id textView10
+id textView11
 id textView2
 id textView3
 id textView4
@@ -26,6 +29,7 @@ id textView5
 id textView6
 id textView7
 id textView8
+id textView9
 id titulo
 layout activity_main
 layout activity_menu
