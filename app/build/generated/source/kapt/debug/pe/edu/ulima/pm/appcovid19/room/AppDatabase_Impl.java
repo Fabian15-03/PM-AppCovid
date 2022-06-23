@@ -39,9 +39,9 @@ public final class AppDatabase_Impl extends AppDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `CovidRoom` (`id` TEXT NOT NULL, `nombre` TEXT NOT NULL, `terreno` TEXT NOT NULL, `poblacion` TEXT NOT NULL, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `CovidRoom` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fecha_corte` INTEGER NOT NULL, `departamento` TEXT NOT NULL, `fecha_resultado` INTEGER NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '85552144c784f63906ea8c3ad802b872')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3d54f25705db73e25b0f211e693fb2d2')");
       }
 
       @Override
@@ -86,10 +86,10 @@ public final class AppDatabase_Impl extends AppDatabase {
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
         final HashMap<String, TableInfo.Column> _columnsCovidRoom = new HashMap<String, TableInfo.Column>(4);
-        _columnsCovidRoom.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsCovidRoom.put("nombre", new TableInfo.Column("nombre", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsCovidRoom.put("terreno", new TableInfo.Column("terreno", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsCovidRoom.put("poblacion", new TableInfo.Column("poblacion", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCovidRoom.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCovidRoom.put("fecha_corte", new TableInfo.Column("fecha_corte", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCovidRoom.put("departamento", new TableInfo.Column("departamento", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCovidRoom.put("fecha_resultado", new TableInfo.Column("fecha_resultado", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysCovidRoom = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesCovidRoom = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoCovidRoom = new TableInfo("CovidRoom", _columnsCovidRoom, _foreignKeysCovidRoom, _indicesCovidRoom);
@@ -101,7 +101,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "85552144c784f63906ea8c3ad802b872", "953a6877b99703a008f5630a1120f7b6");
+    }, "3d54f25705db73e25b0f211e693fb2d2", "406bd45a9329449c8461b6fc75268434");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

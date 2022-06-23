@@ -10,7 +10,9 @@ data class CovidRoom (
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     @ColumnInfo(name = "fecha_corte")
-    val fecha_corte : String,
+    val fecha_corte : Int,
     @ColumnInfo(name = "departamento")
-    val departamento : String
+    val departamento : String,
+    @ColumnInfo(name = "fecha_resultado")
+    val fecha_resultado : Int,
 )

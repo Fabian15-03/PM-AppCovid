@@ -30,31 +30,19 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
     this.__insertionAdapterOfCovidRoom = new EntityInsertionAdapter<CovidRoom>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `CovidRoom` (`id`,`nombre`,`terreno`,`poblacion`) VALUES (?,?,?,?)";
+        return "INSERT OR ABORT INTO `CovidRoom` (`id`,`fecha_corte`,`departamento`,`fecha_resultado`) VALUES (nullif(?, 0),?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, CovidRoom value) {
-        if (value.getId() == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, value.getId());
-        }
-        if (value.getNombre() == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.getNombre());
-        }
-        if (value.getTerreno() == null) {
+        stmt.bindLong(1, value.getId());
+        stmt.bindLong(2, value.getFecha_corte());
+        if (value.getDepartamento() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getTerreno());
+          stmt.bindString(3, value.getDepartamento());
         }
-        if (value.getPoblacion() == null) {
-          stmt.bindNull(4);
-        } else {
-          stmt.bindString(4, value.getPoblacion());
-        }
+        stmt.bindLong(4, value.getFecha_resultado());
       }
     };
     this.__deletionAdapterOfCovidRoom = new EntityDeletionOrUpdateAdapter<CovidRoom>(__db) {
@@ -65,21 +53,17 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
 
       @Override
       public void bind(SupportSQLiteStatement stmt, CovidRoom value) {
-        if (value.getId() == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, value.getId());
-        }
+        stmt.bindLong(1, value.getId());
       }
     };
   }
 
   @Override
-  public void insert(final CovidRoom planeta) {
+  public void insert(final CovidRoom caso) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __insertionAdapterOfCovidRoom.insert(planeta);
+      __insertionAdapterOfCovidRoom.insert(caso);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -87,11 +71,11 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
   }
 
   @Override
-  public void delete(final CovidRoom planeta) {
+  public void delete(final CovidRoom caso) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfCovidRoom.handle(planeta);
+      __deletionAdapterOfCovidRoom.handle(caso);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -106,37 +90,25 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
       final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-      final int _cursorIndexOfNombre = CursorUtil.getColumnIndexOrThrow(_cursor, "nombre");
-      final int _cursorIndexOfTerreno = CursorUtil.getColumnIndexOrThrow(_cursor, "terreno");
-      final int _cursorIndexOfPoblacion = CursorUtil.getColumnIndexOrThrow(_cursor, "poblacion");
+      final int _cursorIndexOfFechaCorte = CursorUtil.getColumnIndexOrThrow(_cursor, "fecha_corte");
+      final int _cursorIndexOfDepartamento = CursorUtil.getColumnIndexOrThrow(_cursor, "departamento");
+      final int _cursorIndexOfFechaResultado = CursorUtil.getColumnIndexOrThrow(_cursor, "fecha_resultado");
       final List<CovidRoom> _result = new ArrayList<CovidRoom>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final CovidRoom _item;
-        final String _tmpId;
-        if (_cursor.isNull(_cursorIndexOfId)) {
-          _tmpId = null;
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final int _tmpFecha_corte;
+        _tmpFecha_corte = _cursor.getInt(_cursorIndexOfFechaCorte);
+        final String _tmpDepartamento;
+        if (_cursor.isNull(_cursorIndexOfDepartamento)) {
+          _tmpDepartamento = null;
         } else {
-          _tmpId = _cursor.getString(_cursorIndexOfId);
+          _tmpDepartamento = _cursor.getString(_cursorIndexOfDepartamento);
         }
-        final String _tmpNombre;
-        if (_cursor.isNull(_cursorIndexOfNombre)) {
-          _tmpNombre = null;
-        } else {
-          _tmpNombre = _cursor.getString(_cursorIndexOfNombre);
-        }
-        final String _tmpTerreno;
-        if (_cursor.isNull(_cursorIndexOfTerreno)) {
-          _tmpTerreno = null;
-        } else {
-          _tmpTerreno = _cursor.getString(_cursorIndexOfTerreno);
-        }
-        final String _tmpPoblacion;
-        if (_cursor.isNull(_cursorIndexOfPoblacion)) {
-          _tmpPoblacion = null;
-        } else {
-          _tmpPoblacion = _cursor.getString(_cursorIndexOfPoblacion);
-        }
-        _item = new CovidRoom(_tmpId,_tmpNombre,_tmpTerreno,_tmpPoblacion);
+        final int _tmpFecha_resultado;
+        _tmpFecha_resultado = _cursor.getInt(_cursorIndexOfFechaResultado);
+        _item = new CovidRoom(_tmpId,_tmpFecha_corte,_tmpDepartamento,_tmpFecha_resultado);
         _result.add(_item);
       }
       return _result;
@@ -156,36 +128,24 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
       final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-      final int _cursorIndexOfNombre = CursorUtil.getColumnIndexOrThrow(_cursor, "nombre");
-      final int _cursorIndexOfTerreno = CursorUtil.getColumnIndexOrThrow(_cursor, "terreno");
-      final int _cursorIndexOfPoblacion = CursorUtil.getColumnIndexOrThrow(_cursor, "poblacion");
+      final int _cursorIndexOfFechaCorte = CursorUtil.getColumnIndexOrThrow(_cursor, "fecha_corte");
+      final int _cursorIndexOfDepartamento = CursorUtil.getColumnIndexOrThrow(_cursor, "departamento");
+      final int _cursorIndexOfFechaResultado = CursorUtil.getColumnIndexOrThrow(_cursor, "fecha_resultado");
       final CovidRoom _result;
       if(_cursor.moveToFirst()) {
-        final String _tmpId;
-        if (_cursor.isNull(_cursorIndexOfId)) {
-          _tmpId = null;
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final int _tmpFecha_corte;
+        _tmpFecha_corte = _cursor.getInt(_cursorIndexOfFechaCorte);
+        final String _tmpDepartamento;
+        if (_cursor.isNull(_cursorIndexOfDepartamento)) {
+          _tmpDepartamento = null;
         } else {
-          _tmpId = _cursor.getString(_cursorIndexOfId);
+          _tmpDepartamento = _cursor.getString(_cursorIndexOfDepartamento);
         }
-        final String _tmpNombre;
-        if (_cursor.isNull(_cursorIndexOfNombre)) {
-          _tmpNombre = null;
-        } else {
-          _tmpNombre = _cursor.getString(_cursorIndexOfNombre);
-        }
-        final String _tmpTerreno;
-        if (_cursor.isNull(_cursorIndexOfTerreno)) {
-          _tmpTerreno = null;
-        } else {
-          _tmpTerreno = _cursor.getString(_cursorIndexOfTerreno);
-        }
-        final String _tmpPoblacion;
-        if (_cursor.isNull(_cursorIndexOfPoblacion)) {
-          _tmpPoblacion = null;
-        } else {
-          _tmpPoblacion = _cursor.getString(_cursorIndexOfPoblacion);
-        }
-        _result = new CovidRoom(_tmpId,_tmpNombre,_tmpTerreno,_tmpPoblacion);
+        final int _tmpFecha_resultado;
+        _tmpFecha_resultado = _cursor.getInt(_cursorIndexOfFechaResultado);
+        _result = new CovidRoom(_tmpId,_tmpFecha_corte,_tmpDepartamento,_tmpFecha_resultado);
       } else {
         _result = null;
       }
