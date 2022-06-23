@@ -19,10 +19,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCovid" >
         <activity
-            android:name="pe.edu.ulima.pm.appcovid.verData"
-            android:exported="false" />
-        <activity
             android:name="pe.edu.ulima.pm.appcovid.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="pe.edu.ulima.pm.appcovid.verData"
+            android:exported="true" />
+        <activity
+            android:name="pe.edu.ulima.pm.appcovid.MenuActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
