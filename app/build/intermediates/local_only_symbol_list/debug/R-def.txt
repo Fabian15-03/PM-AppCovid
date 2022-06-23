@@ -15,7 +15,6 @@ id button4
 id itCantidadXDepartamento
 id itDataDepartamento
 id itemData
-id linearLayout2
 id rcyData
 id secciones
 id textInputEditText

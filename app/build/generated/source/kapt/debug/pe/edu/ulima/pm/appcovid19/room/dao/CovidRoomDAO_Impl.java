@@ -30,12 +30,16 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
     this.__insertionAdapterOfCovidRoom = new EntityInsertionAdapter<CovidRoom>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `CovidRoom` (`id`,`nombre`,`terreno`,`poblacion`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR ABORT INTO `CovidRoom` (`id`,`nombre`,`terreno`,`poblacion`) VALUES (?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, CovidRoom value) {
-        stmt.bindLong(1, value.getId());
+        if (value.getId() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getId());
+        }
         if (value.getNombre() == null) {
           stmt.bindNull(2);
         } else {
@@ -61,7 +65,11 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
 
       @Override
       public void bind(SupportSQLiteStatement stmt, CovidRoom value) {
-        stmt.bindLong(1, value.getId());
+        if (value.getId() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getId());
+        }
       }
     };
   }
@@ -104,8 +112,12 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
       final List<CovidRoom> _result = new ArrayList<CovidRoom>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final CovidRoom _item;
-        final int _tmpId;
-        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final String _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getString(_cursorIndexOfId);
+        }
         final String _tmpNombre;
         if (_cursor.isNull(_cursorIndexOfNombre)) {
           _tmpNombre = null;
@@ -149,8 +161,12 @@ public final class CovidRoomDAO_Impl implements CovidRoomDAO {
       final int _cursorIndexOfPoblacion = CursorUtil.getColumnIndexOrThrow(_cursor, "poblacion");
       final CovidRoom _result;
       if(_cursor.moveToFirst()) {
-        final int _tmpId;
-        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final String _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getString(_cursorIndexOfId);
+        }
         final String _tmpNombre;
         if (_cursor.isNull(_cursorIndexOfNombre)) {
           _tmpNombre = null;
