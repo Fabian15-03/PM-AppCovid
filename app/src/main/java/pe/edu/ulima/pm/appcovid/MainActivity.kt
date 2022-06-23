@@ -16,7 +16,7 @@ class MainActivity : FragmentActivity() {
     private val fragmentData = FragmentData()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_data)
     }
     private fun mostrarFragmentSobreNosotros(ft: FragmentTransaction) {
         ft.replace(id.secciones,fragmentData)

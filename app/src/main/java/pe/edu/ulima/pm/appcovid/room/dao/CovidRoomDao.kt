@@ -16,8 +16,8 @@ interface CovidRoomDAO {
     fun findById(id : Int) : CovidRoom
 
     @Insert
-    fun insert(planeta : CovidRoom)
+    fun insert(caso : CovidRoom)
 
     @Delete
-    fun delete(planeta: CovidRoom)
+    fun delete(caso: CovidRoom)
 }

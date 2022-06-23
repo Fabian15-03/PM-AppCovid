@@ -19,9 +19,11 @@ id linearLayout2
 id rcyData
 id secciones
 id textInputEditText
+id textInputEditText2
 id textView
 id textView10
 id textView11
+id textView12
 id textView2
 id textView3
 id textView4

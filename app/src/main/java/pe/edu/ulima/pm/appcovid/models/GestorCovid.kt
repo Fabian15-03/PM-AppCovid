@@ -1,8 +1,7 @@
-/*package pe.edu.ulima.pm.appcovid19.models
+package pe.edu.ulima.pm.appcovid.models
 
 import android.content.Context
 import pe.edu.ulima.pm.appcovid19.room.AppDatabase
-import pe.edu.ulima.pm.appcovid19.room.dao.CovidRoomDao
 import pe.edu.ulima.pm.appcovid19.room.modules.CovidRoom
 import android.os.Handler
 import android.util.Log
@@ -23,4 +22,4 @@ class GestorCovid {
         return listaCovid
     }
 
-}*/
+}
